@@ -12,7 +12,7 @@
     height: 100vh;
     line-height: 1.6;
     overflow: hidden;
-    font-size: 100%;
+    font-size: 2em;
 
   }
   
@@ -58,7 +58,7 @@
     z-index: 1;
     display: flex;
     width: 100%;
-    height: 5em;
+    height: 4em;
     background: rgba(3, 0, 12, 0.7);
     justify-content: center;
 
@@ -84,7 +84,23 @@
     font-size:  1em;
     width: 100%;
   }
-  
+  @media only screen and (max-width: 600px) {
+  .navbar ul li {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 600px){
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+  font-size: 100%;
+
+}}
   .navbar ul li a {
     text-decoration: none;
     text-transform: uppercase;
