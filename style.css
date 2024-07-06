@@ -1,10 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 89%;
+    font-size: 90%;
   }
-  
-  body {
+@media only screen and (max-width: 800px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+  }
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     background: #333;
@@ -84,12 +91,12 @@
     font-size:  1em;
     width: 100%;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
   .navbar ul li {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
 body {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -125,16 +132,22 @@ body {
     /* Scroll Snap */
     scroll-snap-align: center;
   }
-  
+
+section h1 {
+  font-size: 2em;
+}
+section h2{
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 800px) {
   section h1 {
     font-size: 4em;
   }
   section h2{
     font-size: 2em;
-  }
+  }}
 
-  
-  
   #center {
     width: 80%; 
     margin: auto; 
