@@ -1,169 +1,344 @@
+:root {
+  --kleur-accent:   #C8913A;   /* warm amber / leer */
+  --kleur-donker:   #1E1208;   /* diepbruin */
+  --kleur-navbar:   rgba(20, 10, 2, 0.85);
+  --kleur-overlay1: rgba(40, 22, 5, 0.85);
+  --kleur-overlay2: rgba(5, 2, 0, 0.90);
+  --kleur-box:      rgba(30, 18, 8, 0.65);
+  --kleur-rand:     rgba(200, 145, 58, 0.45);
+  --kleur-tekst:    #F5EED8;   /* warm crème */
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 90%;
-  }
-@media only screen and (max-width: 800px) {
-  * {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    background: #333;
-    color: #fff;
-    height: 100vh;
-    line-height: 1.6;
-    overflow: hidden;
-    font-size: 2em;
-
-  }
-  
-
-  table{
-    width: 70%;
-    height: 20%;
-    padding: 6px;
-    display: table;
-    border-collapse: separate;
-    font-size: large;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: rgb(131, 108, 108);
-
-
-  }
-  .container {
-    width: 100%;
-    height: 100%;
-    margin-top: 60px;
-    font-size: 100%;
-
-    /* CSS Smooth Scroll */
-    overflow-y: scroll; 
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-
-    background-image: linear-gradient(rgba(81, 75, 75, 0.75),rgba(0,0,0,0.75)), url('./Groter Jane voor de leest.png');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .lead {
-    font-size: 100%;
-    width: 95%;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    width: 100%;
-    height: 4em;
-    background: rgba(3, 0, 12, 0.7);
-    justify-content: center;
-
-  }
-  
-  .shadow {
-    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);}
-
-
-
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      width: 10%;
-      
-      justify-content: center;
-    } 
-  
-  .navbar ul li {
-    margin:  0 0 0em;
-    padding: 2em;
-    height: 0;
-    font-size:  1em;
-    width: 100%;
-  }
-  @media only screen and (max-width: 800px) {
-  .navbar ul li {
-    font-size: 1em;
-  }
-}
-@media only screen and (max-width: 800px){
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   width: 100%;
-  background: #333;
-  color: #fff;
+  background: var(--kleur-donker);
+  color: var(--kleur-tekst);
   height: 100vh;
   line-height: 1.6;
   overflow: hidden;
-  font-size: 100%;
-
-}}
-  .navbar ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #f4f4f4;
-    width: 100%;
-  }
-  
-  .navbar ul li a:hover {
-    color: skyblue;
-  }
-  
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    
-   
-    /* Scroll Snap */
-    scroll-snap-align: center;
-  }
-
-section h1 {
-  font-size: 2em;
 }
-section h2{
-  font-size: 2em;
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+
+  background-image: linear-gradient(var(--kleur-overlay1), var(--kleur-overlay2)),
+                    url('./Groter Jane voor de leest.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Navigatie ── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: var(--kleur-navbar);
+  justify-content: center;
+  border-bottom: 1px solid var(--kleur-rand);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--kleur-tekst);
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0;
+  padding: 0 1.5em;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--kleur-tekst);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar ul li a:hover {
+  color: var(--kleur-accent);
 }
 
 @media only screen and (max-width: 800px) {
-  section h1 {
-    font-size: 4em;
+  .nav-toggle {
+    display: block;
   }
-  section h2{
-    font-size: 2em;
-  }}
 
-  #center {
-    width: 80%; 
-    margin: auto; 
-    
-    
-    /* Optional Styling */
-    padding: 20px;
-    border-style: solid;
-    border-color: #B6C7D6;
-    border-radius: 20px;
-    font-size: 1em;
-   
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--kleur-navbar);
+    padding: 1em 0;
+    border-bottom: 1px solid var(--kleur-rand);
   }
-  #home {
-    width: 92%; 
-    margin: auto; 
-    height: 90%;
-   
+
+  .nav-links.open {
+    display: flex;
   }
+
+  .navbar ul li {
+    padding: 0.8em 2em;
+  }
+}
+
+/* ── Secties ── */
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  padding: 2rem 1rem;
+}
+
+section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--kleur-accent);
+  letter-spacing: 0.04em;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  max-width: 600px;
+  margin-top: 0.5rem;
+  color: var(--kleur-tekst);
+}
+
+section h3 {
+  font-size: 1.05rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--kleur-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.lead {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.4rem 0;
+}
+
+#home {
+  gap: 0.5rem;
+}
+
+/* ── Tabel ── */
+
+table {
+  border-collapse: collapse;
+  font-size: 1rem;
+  margin-top: 1rem;
+  min-width: 260px;
+}
+
+table th,
+table td {
+  padding: 0.5em 1.5em;
+  border: 1px solid var(--kleur-rand);
+  text-align: center;
+}
+
+table th {
+  background: rgba(200, 145, 58, 0.15);
+  color: var(--kleur-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+table tr:hover td {
+  background: rgba(200, 145, 58, 0.08);
+}
+
+tr.gesloten td {
+  color: rgba(245, 238, 216, 0.4);
+  font-style: italic;
+}
+
+/* ── Center box (service / over ons) ── */
+
+.center {
+  width: 80%;
+  max-width: 720px;
+  margin: auto;
+  padding: 2rem;
+  background: var(--kleur-box);
+  border: 1px solid var(--kleur-rand);
+  border-radius: 16px;
+  text-align: left;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.tabel-box {
+  text-align: center;
+  width: auto;
+  min-width: 300px;
+  max-width: 420px;
+  padding: 2rem 2.5rem;
+}
+
+.tabel-box table {
+  width: 100%;
+}
+
+.center h1 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.center h3 {
+  margin: 1.2rem 0 0.4rem;
+}
+
+.center p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--kleur-tekst);
+}
+
+/* ── Service lijst ── */
+
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.service-list li::before {
+  content: "✓ ";
+  color: var(--kleur-accent);
+}
+
+/* ── Foto's ── */
+
+.hero-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--kleur-accent);
+  margin-bottom: 1rem;
+}
+
+.over-ons-inhoud {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-photo {
+  width: 200px;
+  min-width: 200px;
+  height: 260px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  border: 1px solid var(--kleur-rand);
+}
+
+.over-ons-tekst {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 55vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .over-ons-inhoud {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 100%;
+    min-width: unset;
+    height: 180px;
+  }
+}
+
+/* ── Contact ── */
+
+#contactType {
+  text-align: center;
+  line-height: 1;
+}
+
+#contactType h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#contactType p {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+#contactType a {
+  color: var(--kleur-accent);
+  text-decoration: none;
+}
+
+#contactType a:hover {
+  text-decoration: underline;
+}
+
+/* ── Mobiel algemeen ── */
+
+@media only screen and (max-width: 800px) {
+  section h1 {
+    font-size: 1.8rem;
+  }
+
+  section h2 {
+    font-size: 1rem;
+  }
+
+  .center {
+    width: 95%;
+    padding: 1.2rem;
+  }
+}
