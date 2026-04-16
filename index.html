@@ -24,102 +24,373 @@
             </ul>
         </nav>
 
-        <section id="home">
+        <section id="home" data-animate>
             <img src="JaneMetHamer.png" alt="Jane van schoenmakerij de Leest" class="hero-photo">
             <h1>Welkom bij schoenmakerij de Leest</h1>
-            <p class="lead">Nieuwstraat 26A, 4811 WV Breda</p>
+            <span id="status-badge" class="status-badge"></span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Nieuwstraat+26A,+4811+WV+Breda" target="_blank" rel="noopener" class="adres-link">
+                &#128205; Nieuwstraat 26A, 4811 WV Breda
+            </a>
             <h2>Zijn uw schoenen toe aan reparatie of heeft u een vraag over uw schoenen? Kom gerust langs en wij helpen je graag verder!</h2>
+            <div class="home-knoppen">
+                <a href="https://wa.me/31765140847" target="_blank" rel="noopener" class="whatsapp-knop">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                    Stuur een WhatsApp
+                </a>
+                <button class="quiz-knop" id="quiz-open">
+                    👟 Is mijn schoen nog te redden?
+                </button>
+            </div>
         </section>
 
-        <section id="about">
+        <!-- Quiz modal -->
+        <div id="quiz-modal" class="quiz-overlay" role="dialog" aria-modal="true" aria-label="Schoen quiz">
+            <div class="quiz-box">
+                <button class="quiz-sluiten" id="quiz-sluiten" aria-label="Sluiten">&times;</button>
+                <div id="quiz-inhoud"></div>
+            </div>
+        </div>
+
+        <section id="about" data-animate>
             <div class="center tabel-box">
                 <h1>Openingstijden</h1>
+                <div id="speciale-mededeling"></div>
                 <table>
                     <tr> <th>Dag</th> <th>Open</th> <th>Sluit</th> </tr>
-                    <tr class="gesloten"> <td>Ma</td> <td>—</td> <td>Gesloten</td> </tr>
-                    <tr> <td>Di</td> <td>10:00</td> <td>18:00</td> </tr>
-                    <tr> <td>Wo</td> <td>10:00</td> <td>17:00</td> </tr>
-                    <tr> <td>Do</td> <td>10:00</td> <td>18:00</td> </tr>
-                    <tr> <td>Vr</td> <td>10:00</td> <td>18:00</td> </tr>
-                    <tr> <td>Za</td> <td>10:00</td> <td>17:00</td> </tr>
-                    <tr class="gesloten"> <td>Zo</td> <td>—</td> <td>Gesloten</td> </tr>
+                    <tr class="gesloten" data-dag="1"> <td>Ma</td> <td>—</td> <td>Gesloten</td> </tr>
+                    <tr data-dag="2"> <td>Di</td> <td>10:00</td> <td>18:00</td> </tr>
+                    <tr data-dag="3"> <td>Wo</td> <td>10:00</td> <td>18:00</td> </tr>
+                    <tr data-dag="4"> <td>Do</td> <td>10:00</td> <td>18:00</td> </tr>
+                    <tr data-dag="5"> <td>Vr</td> <td>10:00</td> <td>18:00</td> </tr>
+                    <tr data-dag="6"> <td>Za</td> <td>10:00</td> <td>17:00</td> </tr>
+                    <tr class="gesloten" data-dag="0"> <td>Zo</td> <td>—</td> <td>Gesloten</td> </tr>
                 </table>
             </div>
         </section>
 
-        <section id="service">
+        <section id="service" data-animate>
             <div class="center">
                 <h1>Wat we doen</h1>
-                <h3>Overig</h3>
-                <ul class="service-list">
-                    <li>Sleutels bijmaken</li>
-                    <li>Schoenpoets &amp; borstels</li>
-                    <li>Schoenlepels &amp; schoenspray</li>
-                    <li>Schoenspanners &amp; veters</li>
-                    <li>Riemen &amp; etui's</li>
-                    <li>Binnenzolen</li>
-                    <li>Hang- en fietssloten</li>
-                </ul>
-                <h3>Schoenen repareren</h3>
-                <ul class="service-list">
-                    <li>Zolen &amp; hakken</li>
-                    <li>Hielvoeringen &amp; teenlappen</li>
-                    <li>Ritsen &amp; runners</li>
-                    <li>Oprekken</li>
-                    <li>Schoenen plakken</li>
-                    <li>Klittenband of elastiek vervangen</li>
-                    <li>Reinigen</li>
-                    <li>Veterringen slaan</li>
-                    <li>Schoenhaken vervangen</li>
-                    <li>Onderwerken zetten</li>
-                    <li>Tongen vaststikken</li>
-                </ul>
-                <p>Wilt u weten wat voor uw schoen mogelijk is? Kom even langs in onze winkel. Dan kunnen we u precies vertellen wat de mogelijkheden zijn, wat de kosten zullen bedragen en hoe lang het gaat duren.</p>
-            </div>
-        </section>
 
-        <section id="OverOns">
-            <div class="center">
-                <h1>Over ons</h1>
-                <div class="over-ons-inhoud">
-                    <img src="Jane voor deleest2.png" alt="Jane achter de werkbank" class="about-photo">
-                    <div class="over-ons-tekst">
-                <p>Schoenmakerij de Leest zit al vanaf de jaren 90 in Breda.
-                Hoe lang precies weet ik niet, maar er zijn al paar schoenmakers mij voorgegaan.
-                De enige die ik echt ken is mijn voorganger, u weet wel, de schoenmaker met de hond.
-                Die heeft mij ergens in 2010 achter een bar geplukt, waar ik na mijn studie goudsmeden "even" was gaan werken.
-                Ik ben toen in de leer gegaan en heb de switch gemaakt naar schoenmaker.
-                Samen hebben we toen de verandering van hakkenbar naar kwaliteit schoenmaker gerealiseerd.</p>
-                <p>In 2015 verkondigde hij dat het genoeg was geweest en besloot ik om de toko over te nemen.
-                Ik kreeg nog een jaar oppasrechten voor de hond en moest het vanaf toen helemaal zelf gaan doen.
-                Binnen een maand was ook het gilde langs geweest en ben dus vanaf toen ook weer Gilde schoenmaker.
-                Maar al snel bleek dat het werk wat Nico en ik samen deden niet in m'n eentje was te doen en is Koen,
-                mijn partner erbij gekomen als verwachtingsmanager.
-                Wat inhoudt dat ik me helemaal kan bezighouden met het repareren en hij met de klanten en andere bijkomende zaken.</p>
-                <p>En toen kwam corona. Als essentieel bedrijf mocht ik deze hele periode open blijven, maar aangezien iedereen met sloffen aan thuis zat, was het een stuk rustiger en was er tijd om na te denken.
-                En dus besloot ik mijn stoute schoenen aan te trekken en mijn huurcontract op de Korte Brugstraat op te zeggen. Enkele maanden later kwam de Nieuwstraat in the picture en begon de zomer van verbouwen. En 10 september 2022 was het zover!
-                Eigenlijk zijn we maar twee straatjes verhuisd, maar door deze nieuwe locatie zijn we beter bereikbaar, aan de rand van het centrum.</p>
-                    </div>
+                <div class="accordion-header open">
+                    <h3>&#128736; Schoenen repareren</h3>
+                    <span class="accordion-pijl">&#9660;</span>
+                </div>
+                <div class="accordion-body open">
+                    <ul class="service-list service-list--kolommen">
+                        <li data-populair>Zolen &amp; hakken</li>
+                        <li data-populair>Ritsen &amp; runners</li>
+                        <li data-populair>Oprekken</li>
+                        <li>Hielvoeringen &amp; teenlappen</li>
+                        <li>Schoenen plakken</li>
+                        <li>Klittenband of elastiek vervangen</li>
+                        <li>Reinigen</li>
+                        <li>Veterringen slaan</li>
+                        <li>Schoenhaken vervangen</li>
+                        <li>Onderwerken zetten</li>
+                        <li>Tongen vaststikken</li>
+                    </ul>
+                </div>
+
+                <div class="accordion-header open">
+                    <h3>&#128722; Overig</h3>
+                    <span class="accordion-pijl">&#9660;</span>
+                </div>
+                <div class="accordion-body open">
+                    <p class="overig-intro">Naast schoenen kun je bij ons ook terecht voor:</p>
+                    <ul class="service-list service-list--kolommen">
+                        <li>Sleutels bijmaken</li>
+                        <li>Schoenpoets &amp; borstels</li>
+                        <li>Schoenlepels &amp; schoenspray</li>
+                        <li>Schoenspanners &amp; veters</li>
+                        <li>Riemen &amp; etui's</li>
+                        <li>Binnenzolen</li>
+                        <li>Hang- en fietssloten</li>
+                    </ul>
+                </div>
+
+                <div class="service-cta">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nieuwstraat+26A,+4811+WV+Breda" target="_blank" rel="noopener" class="service-cta-map" aria-label="Bekijk op Google Maps">
+                        <span class="service-cta-icon">&#128205;</span>
+                        <span class="service-cta-map-label">Route</span>
+                    </a>
+                    <p>Weet u niet zeker wat er nodig is? Kom even langs of stuur een berichtje! We kijken graag mee en vertellen u wat de mogelijkheden, kosten en levertijd zijn.</p>
+                    <a href="https://wa.me/31765140847" target="_blank" rel="noopener" class="service-cta-wa" aria-label="Stuur een WhatsApp">
+                        <span class="service-cta-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                        </span>
+                        <span class="service-cta-map-label">WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="OverOns" data-animate>
+            <h1 class="sectie-titel">Over ons</h1>
+            <div class="over-ons-box">
+                <div class="over-ons-scroll">
+                        <p>Schoenmakerij de Leest zit al vanaf de jaren 90 in Breda.
+                        Hoe lang precies weet ik niet, maar er zijn al paar schoenmakers mij voorgegaan.
+                        De enige die ik echt ken is mijn voorganger, u weet wel, de schoenmaker met de hond.
+                        Die heeft mij ergens in 2010 achter een bar geplukt, waar ik na mijn studie goudsmeden "even" was gaan werken.
+                        Ik ben toen in de leer gegaan en heb de switch gemaakt naar schoenmaker.
+                        Samen hebben we toen de verandering van hakkenbar naar kwaliteit schoenmaker gerealiseerd.</p>
+                        <p>In 2015 verkondigde hij dat het genoeg was geweest en besloot ik om de toko over te nemen.
+                        Ik kreeg nog een jaar oppasrechten voor de hond en moest het vanaf toen helemaal zelf gaan doen.
+                        Binnen een maand was ook het gilde langs geweest en ben dus vanaf toen ook weer Gilde schoenmaker.
+                        Maar al snel bleek dat het werk wat Nico en ik samen deden niet in m'n eentje was te doen en is Koen,
+                        mijn partner erbij gekomen als verwachtingsmanager.
+                        Wat inhoudt dat ik me helemaal kan bezighouden met het repareren en hij met de klanten en andere bijkomende zaken.</p>
+                        <p>En toen kwam corona. Als essentieel bedrijf mocht ik deze hele periode open blijven, maar aangezien iedereen met sloffen aan thuis zat, was het een stuk rustiger en was er tijd om na te denken.
+                        En dus besloot ik mijn stoute schoenen aan te trekken en mijn huurcontract op de Korte Brugstraat op te zeggen. Enkele maanden later kwam de Nieuwstraat in the picture en begon de zomer van verbouwen. En 10 september 2022 was het zover!
+                        Eigenlijk zijn we maar twee straatjes verhuisd, maar door deze nieuwe locatie zijn we beter bereikbaar, aan de rand van het centrum.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" data-animate>
             <div id="contactType">
                 <h1>Contact</h1>
                 <p>Schoenmakerij de Leest</p>
                 <p>Nieuwstraat 26A, 4811 WV Breda</p>
                 <p>Tel: <a href="tel:+31765140847">076 514 0847</a></p>
+                <a href="https://wa.me/31765140847" target="_blank" rel="noopener" class="whatsapp-knop" style="margin-top:0.8rem;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="1.1em" height="1.1em"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                    Stuur een WhatsApp
+                </a>
+                <div class="maps-embed">
+                    <iframe
+                        title="Locatie Schoenmakerij de Leest"
+                        src="https://maps.google.com/maps?q=Nieuwstraat+26A,+4811+WV+Breda&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </section>
 
     </div>
 
+    <!-- Terug naar boven knop -->
+    <button id="terug-boven" aria-label="Terug naar boven">&#8679;</button>
+
     <script>
+        // ── Mobiel menu ──
         const toggle = document.querySelector('.nav-toggle');
         const links = document.querySelector('.nav-links');
         toggle.addEventListener('click', () => links.classList.toggle('open'));
         links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+        // ── Open / Gesloten badge + vandaag markeren ──
+        const openingstijden = {
+            0: null,                      // Zo: gesloten
+            1: null,                      // Ma: gesloten
+            2: { open: 10, sluit: 18 },   // Di
+            3: { open: 10, sluit: 18 },   // Wo
+            4: { open: 10, sluit: 18 },   // Do
+            5: { open: 10, sluit: 18 },   // Vr
+            6: { open: 10, sluit: 17 },   // Za
+        };
+
+        function updateStatus() {
+            const nu = new Date();
+            const dag = nu.getDay();
+            const uur = nu.getHours() + nu.getMinutes() / 60;
+            const tijden = openingstijden[dag];
+            const isOpen = tijden && uur >= tijden.open && uur < tijden.sluit;
+
+            const badge = document.getElementById('status-badge');
+            const sluitBinnenkort = isOpen && (tijden.sluit - uur) <= 1;
+            if (sluitBinnenkort) {
+                const minutenOver = Math.round((tijden.sluit - uur) * 60);
+                badge.textContent = `Sluit binnenkort · over ${minutenOver} min`;
+                badge.className = 'status-badge sluit-binnenkort';
+            } else if (isOpen) {
+                badge.textContent = `Nu open · sluit vandaag om ${tijden.sluit}:00`;
+                badge.className = 'status-badge open';
+            } else {
+                // Zoek de eerstvolgende dag dat de winkel open is
+                let volgende = null;
+                for (let i = 1; i <= 7; i++) {
+                    const volgendeDag = (dag + i) % 7;
+                    if (openingstijden[volgendeDag]) {
+                        const dagNamen = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
+                        volgende = i === 1
+                            ? `morgen om ${openingstijden[volgendeDag].open}:00`
+                            : `${dagNamen[volgendeDag]} om ${openingstijden[volgendeDag].open}:00`;
+                        break;
+                    }
+                }
+                badge.textContent = volgende ? `Nu gesloten · open ${volgende}` : 'Nu gesloten';
+                badge.className = 'status-badge gesloten';
+            }
+
+            // Markeer de huidige dag in de tabel
+            document.querySelectorAll('tr[data-dag]').forEach(rij => {
+                rij.classList.toggle('vandaag', parseInt(rij.dataset.dag) === dag);
+            });
+        }
+
+        updateStatus();
+        setInterval(updateStatus, 60000); // elk minuut bijwerken
+
+        // ── Speciale mededelingen ──
+        function updateMededeling() {
+            const nu = new Date();
+            const vandaag = new Date(nu.getFullYear(), nu.getMonth(), nu.getDate());
+
+            const hemelvaart   = new Date(2026, 4, 14);  // 14 mei 2026
+            const vakantieVan  = new Date(2026, 4, 29);  // 29 mei 2026
+            const vakantieTm   = new Date(2026, 5, 16);  // 16 juni 2026
+
+            const el = document.getElementById('speciale-mededeling');
+            let berichten = [];
+
+            if (vandaag <= hemelvaart) {
+                berichten.push({ icoon: '🔔', tekst: 'Op Hemelvaart (14 mei) zijn wij <strong>gewoon geopend</strong>.' });
+            }
+            if (vandaag <= vakantieTm) {
+                if (vandaag >= vakantieVan) {
+                    berichten.push({ icoon: '🌴', tekst: `Wij zijn met <strong>vakantie</strong> t/m 16 juni. Tot dan!` });
+                } else {
+                    berichten.push({ icoon: '🌴', tekst: `Vakantie van 29 mei t/m 16 juni 2026.` });
+                }
+            }
+
+            if (berichten.length === 0) {
+                el.innerHTML = '';
+                return;
+            }
+
+            el.innerHTML = berichten.map(b =>
+                `<div class="mededeling"><span class="mededeling-icoon">${b.icoon}</span><span>${b.tekst}</span></div>`
+            ).join('');
+        }
+
+        updateMededeling();
+
+        // ── Scroll-animaties + actieve nav ──
+        const container = document.querySelector('.container');
+        const secties = document.querySelectorAll('section[data-animate]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Animatie intrigeren
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('zichtbaar');
+                }
+
+                // Actieve nav bijwerken
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+                    const id = entry.target.id;
+                    navLinks.forEach(a => {
+                        a.classList.toggle('actief', a.getAttribute('href') === '#' + id);
+                    });
+                }
+            });
+        }, {
+            root: container,
+            threshold: [0.1, 0.4]
+        });
+
+        secties.forEach(s => observer.observe(s));
+
+        // ── Terug naar boven knop ──
+        const terugKnop = document.getElementById('terug-boven');
+
+        container.addEventListener('scroll', () => {
+            terugKnop.classList.toggle('zichtbaar', container.scrollTop > 200);
+        });
+
+        terugKnop.addEventListener('click', () => {
+            container.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Quiz ──
+        const vragen = [
+            'Is de zool (deels) los of helemaal versleten?',
+            'Is het leer gescheurd, gebarsten of beschadigd?',
+            'Zit er een kapotte rits, gesp of gebroken hak in?',
+            'Zijn de schoenen al een tijdje niet gedragen of vuil?',
+        ];
+
+        const waModal = 'https://wa.me/31765140847?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20mijn%20schoenen!';
+        const modal     = document.getElementById('quiz-modal');
+        const inhoud    = document.getElementById('quiz-inhoud');
+        const openKnop  = document.getElementById('quiz-open');
+        const sluitKnop = document.getElementById('quiz-sluiten');
+
+        function toonVraag(index) {
+            inhoud.innerHTML = `
+                <p class="quiz-stap">Vraag ${index + 1} van ${vragen.length}</p>
+                <div class="quiz-voortgang"><div class="quiz-voortgang-balk" style="width:${(index / vragen.length) * 100}%"></div></div>
+                <p class="quiz-vraag">${vragen[index]}</p>
+                <div class="quiz-knoppen">
+                    <button class="quiz-antwoord" onclick="quizAntwoord(${index})">Ja</button>
+                    <button class="quiz-antwoord quiz-antwoord--nee" onclick="quizAntwoord(${index})">Nee</button>
+                </div>`;
+        }
+
+        function toonResultaat() {
+            inhoud.innerHTML = `
+                <div class="quiz-voortgang"><div class="quiz-voortgang-balk" style="width:100%"></div></div>
+                <div class="quiz-resultaat">
+                    <span class="quiz-emoji">🛠️</span>
+                    <h3>Stuur voor de zekerheid een berichtje!</h3>
+                    <p>Wij kijken graag met u mee. De meeste schoenen zijn prima te repareren — beschrijf kort wat er aan de hand is en we geven snel antwoord.</p>
+                    <a href="${waModal}" target="_blank" rel="noopener" class="whatsapp-knop" style="margin-top:1rem;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="1.1em" height="1.1em"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                        Stuur een berichtje via WhatsApp
+                    </a>
+                    <button class="quiz-opnieuw" onclick="quizStart()">Opnieuw</button>
+                </div>`;
+        }
+
+        function quizAntwoord(index) {
+            if (index + 1 < vragen.length) {
+                toonVraag(index + 1);
+            } else {
+                toonResultaat();
+            }
+        }
+
+        function quizStart() { toonVraag(0); }
+
+        openKnop.addEventListener('click', () => {
+            quizStart();
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function sluitQuiz() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        sluitKnop.addEventListener('click', sluitQuiz);
+        modal.addEventListener('click', e => { if (e.target === modal) sluitQuiz(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') sluitQuiz(); });
+
+        // ── Service accordions ──
+        const isMobiel = () => window.innerWidth <= 800;
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            const body = header.nextElementSibling;
+
+            // Op mobiel standaard dichtklappen
+            if (isMobiel()) {
+                header.classList.remove('open');
+                body.classList.remove('open');
+            }
+
+            header.addEventListener('click', () => {
+                const isOpen = header.classList.contains('open');
+                header.classList.toggle('open', !isOpen);
+                body.classList.toggle('open', !isOpen);
+            });
+        });
     </script>
 </body>
 </html>
