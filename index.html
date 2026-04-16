@@ -187,7 +187,17 @@
 
         toggle.addEventListener('click', () => links.classList.contains('open') ? menuSluit() : menuOpen());
         overlay.addEventListener('click', menuSluit);
-        links.querySelectorAll('a').forEach(a => a.addEventListener('click', menuSluit));
+
+        const scrollContainer = document.querySelector('.container');
+
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
+            menuSluit();
+            const doel = document.querySelector(a.getAttribute('href'));
+            if (doel) {
+                e.preventDefault();
+                scrollContainer.scrollTo({ top: doel.offsetTop, behavior: 'smooth' });
+            }
+        }));
 
         // ── Open / Gesloten badge + vandaag markeren ──
         const openingstijden = {
