@@ -993,6 +993,69 @@ tr.vandaag td {
   max-height: 600px;
 }
 
+/* ── Bel popup ── */
+
+.bel-popup {
+  margin-top: 0.8rem;
+  padding: 1rem 1.2rem;
+  background: rgba(200, 145, 58, 0.08);
+  border: 1px solid var(--kleur-rand);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeIn 0.2s ease;
+}
+
+.bel-popup p {
+  margin: 0 0 0.8rem;
+  color: var(--kleur-tekst);
+}
+
+.bel-popup-knoppen {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bel-popup-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 1.1em;
+  background: #25D366;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: transform 0.2s ease;
+}
+
+.bel-popup-wa:hover { transform: translateY(-2px); }
+
+.bel-popup-bel {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1.1em;
+  border: 1px solid rgba(245,238,216,0.3);
+  border-radius: 999px;
+  color: rgba(245,238,216,0.6);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.bel-popup-bel:hover {
+  color: var(--kleur-tekst);
+  border-color: rgba(245,238,216,0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Maps embed ── */
 
 .maps-embed {
