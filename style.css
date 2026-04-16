@@ -91,28 +91,75 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  .nav-toggle {
-    display: block;
+
+  /* Verberg de volledige balk */
+  .navbar {
+    background: transparent;
+    border-bottom: none;
+    height: 0;
+    pointer-events: none;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+  /* Zwevende menuknop rechts bovenin */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     background: var(--kleur-navbar);
-    padding: 1em 0;
-    border-bottom: 1px solid var(--kleur-rand);
+    border: 1px solid var(--kleur-rand);
+    color: var(--kleur-tekst);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 300;
+    pointer-events: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  /* Schuifmenu van rechts */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background: rgba(20, 10, 2, 0.97);
+    border-left: 1px solid var(--kleur-rand);
+    padding: 5rem 0 2rem;
+    z-index: 200;
+    pointer-events: auto;
+    transition: right 0.3s ease;
   }
 
   .nav-links.open {
-    display: flex;
+    right: 0;
   }
 
   .navbar ul li {
-    padding: 0.8em 2em;
+    padding: 0.9em 2em;
+    border-bottom: 1px solid rgba(200,145,58,0.1);
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+
+  /* Container hoeft niet meer ruimte voor navbar te reserveren */
+  .container {
+    margin-top: 0;
+  }
+
+  /* Sectie padding aanpassen zonder navbar */
+  section {
+    padding: 3rem 1rem 2.5rem;
   }
 }
 
@@ -738,6 +785,20 @@ tr.gesloten td {
   text-align: center;
 }
 
+/* ── Menu overlay (mobiel) ── */
+
+#menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 150;
+}
+
+#menu-overlay.open {
+  display: block;
+}
+
 /* ── WhatsApp knop ── */
 
 .whatsapp-knop {
@@ -967,7 +1028,10 @@ tr.vandaag td {
   }
 
   /* Home */
-  #home { gap: 0.5rem; }
+  #home {
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+  }
 
   .hero-photo {
     width: 110px;
