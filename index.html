@@ -252,6 +252,11 @@
     <!-- Terug naar boven knop -->
     <button id="terug-boven" aria-label="Terug naar boven">&#8679;</button>
 
+    <!-- Hond mascotte -->
+    <div id="hond-mascotte" aria-hidden="true">
+        <img src="hond.png" alt="">
+    </div>
+
     <script>
         // ── Mobiel menu ──
         const toggle = document.querySelector('.nav-toggle');
@@ -479,6 +484,33 @@
         sluitKnop.addEventListener('click', sluitQuiz);
         modal.addEventListener('click', e => { if (e.target === modal) sluitQuiz(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') sluitQuiz(); });
+
+        // ── Hond mascotte ──
+        (function() {
+            const hond = document.getElementById('hond-mascotte');
+            let timer;
+
+            function verschijn() {
+                hond.classList.add('zichtbaar');
+                timer = setTimeout(verdwijn, 5000);
+            }
+
+            function verdwijn() {
+                hond.classList.remove('zichtbaar');
+                // Volgende keer: ergens tussen 90 en 180 seconden
+                const wacht = (90 + Math.random() * 90) * 1000;
+                setTimeout(verschijn, wacht);
+            }
+
+            // Klik: verdwijn direct
+            hond.addEventListener('click', () => {
+                clearTimeout(timer);
+                verdwijn();
+            });
+
+            // Eerste verschijning na 20 seconden
+            setTimeout(verschijn, 20000);
+        })();
 
         // ── Service accordions ──
         const isMobiel = () => window.innerWidth <= 800;
