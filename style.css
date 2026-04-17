@@ -36,9 +36,9 @@ body {
   scroll-snap-type: y mandatory;
 
   background-image: linear-gradient(var(--kleur-overlay1), var(--kleur-overlay2)),
-                    url('./Groter Jane voor de leest.png');
+                    url('./winkel.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 /* ── Navigatie ── */
