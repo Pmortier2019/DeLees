@@ -345,14 +345,6 @@ tr.gesloten td {
   flex-shrink: 0;
 }
 
-/* Populaire items krijgen een subtiel sterretje */
-.service-list li[data-populair]::after {
-  content: "★";
-  font-size: 0.7rem;
-  color: var(--kleur-accent);
-  margin-left: auto;
-  opacity: 0.7;
-}
 
 .overig-intro {
   font-size: 0.85rem;
