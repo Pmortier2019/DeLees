@@ -57,13 +57,14 @@
 <body>
     <div class="container">
 
+        <button class="nav-toggle" aria-label="Menu openen">&#9776;</button>
         <nav class="navbar">
-            <button class="nav-toggle" aria-label="Menu openen">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="#home">Welkom</a></li>
                 <li><a href="#about">Openingstijden</a></li>
                 <li><a href="#service">Service</a></li>
                 <li><a href="#OverOns">Over ons</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -78,10 +79,13 @@
             </a>
             <h2>Zijn uw schoenen toe aan reparatie of heeft u een vraag over uw schoenen? Kom gerust langs en wij helpen je graag verder!</h2>
             <div class="home-knoppen">
-                <a href="https://wa.me/31765140847" target="_blank" rel="noopener" class="whatsapp-knop">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-                    Stuur een WhatsApp
-                </a>
+                <div class="whatsapp-groep">
+                    <a href="https://wa.me/31765140847" target="_blank" rel="noopener" class="whatsapp-knop">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                        Stuur een WhatsApp
+                    </a>
+                    <p class="wa-opmerking">We reageren alleen tijdens openingstijden.</p>
+                </div>
                 <button class="quiz-knop" id="quiz-open">
                     👟 Is mijn schoen nog te redden?
                 </button>
@@ -160,7 +164,6 @@
                         <li>Hielvoeringen &amp; teenlappen</li>
                         <li>Schoenen plakken</li>
                         <li>Klittenband of elastiek vervangen</li>
-                        <li>Reinigen</li>
                         <li>Veterringen slaan</li>
                         <li>Schoenhaken vervangen</li>
                         <li>Onderwerken zetten</li>
@@ -224,6 +227,53 @@
             </div>
         </section>
 
+        <section id="faq" data-animate>
+            <h2>Veelgestelde vragen</h2>
+            <div class="faq-lijst">
+
+                <details class="faq-item">
+                    <summary>Hoe lang duurt het voor mijn schoenen klaar zijn?</summary>
+                    <p>Afhankelijk van het moment van brengen en hoe druk het is, maar meestal 1 tot 2 weken.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Geldt dat ook voor het oprekken van schoenen?</summary>
+                    <p>Nee, dat is afhankelijk van de wachtrij. Schoenen moeten sowieso 24 uur op de oprekker. Dus soms een dag, soms meer dan een week.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>En onderwerken voor bergschoenen en Dubarry laarzen?</summary>
+                    <p>Gemiddeld 2 tot 3 weken.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Een sleutel bijmaken, hoe lang duurt dat?</summary>
+                    <p>Daar kunt u op wachten. U hoeft nooit een sleutel hiervoor bij ons achter te laten.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Moet ik vooraf betalen als ik mijn schoenen breng?</summary>
+                    <p>Nee, bij ons betaalt u bij ophalen. Dit omdat we ook niet altijd van tevoren kunnen zeggen wat het gaat kosten. We kunnen altijd aangeven wat het maximaal gaat kosten, zodat u zelf kunt bepalen of u het de moeite waard vindt.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Mag ik de hond aaien?</summary>
+                    <p>Uiteraard! Mensen vindt ze altijd erg leuk — andere honden vindt ze wel een beetje spannend.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Ik kan de schoenen niet ophalen op de aangegeven datum, is dat erg?</summary>
+                    <p>Zeker niet, later ophalen is geen probleem — eerder helaas niet. We zijn verplicht de schoenen 6 weken te bewaren, dus het zou fijn zijn als u ze in die tijd ophaalt. Lukt dat om wat voor reden niet, stuur dan een foto van uw kaartje via WhatsApp en we bewaren ze zo lang als nodig.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>U bent gildeschoenmaakster, wat houdt dat in?</summary>
+                    <p>Dat betekent dat ik met originele materialen van Van Bommel en Van Lier (indien voor ons gildeschoenmakers beschikbaar) mag repareren. Eens per jaar word ik gekeurd door het gilde.</p>
+                </details>
+
+            </div>
+        </section>
+
         <section id="contact" data-animate>
             <div id="contactType">
                 <h1>Contact</h1>
@@ -235,6 +285,7 @@
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="1.1em" height="1.1em"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.882a.5.5 0 0 0 .611.61l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 0 1-5.003-1.369l-.36-.214-3.717.888.916-3.618-.235-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
                     Stuur een WhatsApp
                 </a>
+                <p style="font-size:0.8rem; color:var(--kleur-tekst-licht); margin-top:0.3rem; opacity:0.7;">We reageren alleen tijdens openingstijden.</p>
                 <div class="maps-embed">
                     <iframe
                         title="Locatie Schoenmakerij de Leest"
@@ -262,14 +313,21 @@
         const toggle = document.querySelector('.nav-toggle');
         const links = document.querySelector('.nav-links');
         const overlay = document.getElementById('menu-overlay');
+        const scrollContainer = document.querySelector('.container');
 
-        function menuOpen()  { links.classList.add('open');    overlay.classList.add('open'); }
-        function menuSluit() { links.classList.remove('open'); overlay.classList.remove('open'); }
+        function menuOpen()  {
+            links.classList.add('open');
+            overlay.classList.add('open');
+            scrollContainer.style.overflow = 'hidden';
+        }
+        function menuSluit() {
+            links.classList.remove('open');
+            overlay.classList.remove('open');
+            scrollContainer.style.overflow = '';
+        }
 
         toggle.addEventListener('click', () => links.classList.contains('open') ? menuSluit() : menuOpen());
         overlay.addEventListener('click', menuSluit);
-
-        const scrollContainer = document.querySelector('.container');
 
         links.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
             menuSluit();

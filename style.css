@@ -437,6 +437,72 @@ tr.gesloten td {
   margin-bottom: 1rem;
 }
 
+/* FAQ */
+#faq {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.faq-lijst {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-item {
+    background: rgba(30, 18, 8, 0.65);
+    border: 1px solid var(--kleur-rand);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.faq-item[open] {
+    border-color: var(--kleur-accent);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--kleur-accent);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    padding: 0 1.2rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(245, 238, 216, 0.75);
+    margin: 0;
+    border-top: 1px solid var(--kleur-rand);
+}
+
 .over-ons-box {
   width: 80%;
   max-width: 680px;
@@ -547,7 +613,21 @@ tr.gesloten td {
   gap: 0.8rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 0.5rem;
+}
+
+.whatsapp-groep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.wa-opmerking {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
 }
 
 .home-knoppen .whatsapp-knop,
