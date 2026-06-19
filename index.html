@@ -367,16 +367,21 @@
                 badge.textContent = `Nu open · sluit vandaag om ${tijden.sluit}:00`;
                 badge.className = 'status-badge open';
             } else {
-                // Zoek de eerstvolgende dag dat de winkel open is
+                // Zoek de eerstvolgende keer dat de winkel open is
                 let volgende = null;
-                for (let i = 1; i <= 7; i++) {
-                    const volgendeDag = (dag + i) % 7;
-                    if (openingstijden[volgendeDag]) {
-                        const dagNamen = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
-                        volgende = i === 1
-                            ? `morgen om ${openingstijden[volgendeDag].open}:00`
-                            : `${dagNamen[volgendeDag]} om ${openingstijden[volgendeDag].open}:00`;
-                        break;
+                if (tijden && uur < tijden.open) {
+                    // Vandaag gaat de winkel nog open
+                    volgende = `vandaag om ${tijden.open}:00`;
+                } else {
+                    for (let i = 1; i <= 7; i++) {
+                        const volgendeDag = (dag + i) % 7;
+                        if (openingstijden[volgendeDag]) {
+                            const dagNamen = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
+                            volgende = i === 1
+                                ? `morgen om ${openingstijden[volgendeDag].open}:00`
+                                : `${dagNamen[volgendeDag]} om ${openingstijden[volgendeDag].open}:00`;
+                            break;
+                        }
                     }
                 }
                 badge.textContent = volgende ? `Nu gesloten · open ${volgende}` : 'Nu gesloten';
